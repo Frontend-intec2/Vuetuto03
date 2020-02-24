@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<style>
+    span {
+        background: red;
+        display: inline-block;
+        padding: 10px;
+        color: #fff;
+        margin: 10px 0;
+    }
+
+    .available span {
+        background: green;
+    }
+
+    /*:after a span "nearby" with "Manu"*/
+    .nearby span:after {
+        content: "nearby";
+        margin-left: 10px
+    }
+
+    /*3:47*/
+</style>
+
+<body>
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <h2>Example 2</h2>
+        <div v-bind:class="compClasses"> <span>Manu</span>
+        </div>
+        <button v-on:click="nearby=!nearby">Toggle nearby</button>
+        <button v-on:click="available=!available">Toggle, I am available</button>
+        <!--4:27-->
+    </div>
+    </div>
+    <script>
+        var myObject = new Vue({
+            el: '#app',
+            data: {
+                message: 'Dynamic CSS',
+                available: false,
+                nearby: false,
+            },
+            methods: {},
+            computed: {
+                compClasses: function () {
+                    return {
+                        available: this.available,
+                        nearby: this.nearby,
+                    }
+                }
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+
+  <div id="app">
+    <h1>{{ message }}</h1>
+
+
+    <button v-on:click="error=!error">Toggle Error</button>
+    <button v-on:click="success=!success">Toggle Success</button>
+    <p v-if="error">error</p>
+    <p v-else-if="success">success</p>
+  </div>
+<!--v-show makes display none and doesn't take out completely-->
+  <script>
+    var myObject = new Vue({
+      el: '#app',
+      data: {
+        message: "Conditionals; V-IF",
+        error: false,
+        success: false
+      }
+    })
+  </script>
+
+</body>
+
+</html>

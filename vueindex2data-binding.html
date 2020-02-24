@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+    <h1>V-bind can be deleted</h1>
+    <div id="app">
+        <a v-bind:href="hreflink" target="_blank">GOOGLE</a>
+        <input type="text" v-bind:value="name">
+        <p v-html="webSiteTag">site</p>
+    </div>
+
+    <script>
+        var myObject = new Vue({
+            el: '#app',
+            data: {
+                name: 'John',
+
+                hreflink: "http://www.Google.com",
+
+                webSiteTag: '<a href="http://www.Google.com" target="_blank"> GOOGLE </a>',
+
+            },
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+
+  <div id="app">
+    <h1>I am {{ age }}</h1>
+    <button v-on:click.once="age++">one more</button>
+    <!--line 9 .once does what it sais-->
+
+    <button v-on:dblclick.prevent="click()" href="http://www.google.com">click me</button>
+    <!--line 12 .once does what it sais-->
+
+  </div>
+
+  <script>
+    var myObject = new Vue({
+      el: '#app',
+      data: {
+        age: 25,
+      },
+      methods: {
+        subtract: function (dec) {
+          this.age -= dec;
+        },
+        click: function () {
+          alert("you clicked me")
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

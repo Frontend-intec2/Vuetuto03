@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+  hello
+  <div id="app">
+    <h1>{{ message }}</h1>
+
+    <button v-on:click="a++">add to A</button>
+    <button v-on:click="b++">add to B</button>
+    <br><br>
+    <p>A - {{ a }}</p>
+    <p>B - {{ b }}</p>
+    <br><br>
+    <p>Age + A = {{ addToA }}</p>
+    <p>Age + B = {{ addToB }}</p>
+    <!--delete () on 16 and 17 for commuted-->
+
+  </div>
+
+  <script>
+    var myObject = new Vue({
+      el: '#app',
+      data: {
+        message: 'Computed vs functionalProperties',
+        age: 20,
+        a: 0,
+        b: 0,
+      },
+
+      methods: {
+        addToA: function () {
+          console.log('FUNCTIONAL addToA');
+          return this.a + this.age;
+        },
+        addToB: function () {
+          console.log('FUNCTIONAL addToB');
+          return this.b + this.age;
+        }
+      },
+
+      computed: {
+        addToA: function () {
+          console.log('COMPUTED addtoA')
+          return this.a + this.age;
+        },
+        addToB: function () {
+          console.log('COMPUTED addtoB')
+          return this.b + this.age;
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

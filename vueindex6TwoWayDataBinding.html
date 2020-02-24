@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <input type="text" v-on:keyup="logName">
+    <br>
+    <!--do not go after the value of the inputfield-->
+    <br>
+    <span>type here</span>
+    <input type="text" v-model="naam">
+    <p>{{ naam }}</p>
+
+  </div>
+
+  <script>
+    var myObject = new Vue({
+      el: '#app',
+      data: {
+        message: 'Keyboard Events',
+        name: 'Benedikt',
+        naam: '',
+      },
+      methods: {
+        logName: function () {
+          console.log('you entered your name');
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>

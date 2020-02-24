@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+
+  <div id="app">
+    <h1>I am {{ age }}</h1>
+    <button v-on:click="age++">one more</button>
+    <button v-on:dblclick="subtract(10)">one less</button>
+    <!--about v-on: Vue knows substract is a function so you can delete the ()-->
+
+  </div>
+
+  <script>
+    var myObject = new Vue({
+      el: '#app',
+      data: {
+        age: 25,
+      },
+      methods: {
+        subtract: function (dec) {
+          this.age -= dec;
+
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

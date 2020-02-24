@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+
+  <div id="app1">
+    <h1>{{ message }}</h1>
+    <h1>{{ greet }}</h1>
+    <hr>
+  </div>
+  <div id="app2">
+    <h1>{{ message }}</h1>
+    <h1>{{ greet }}</h1>
+    <button v-on:click="changeTitle">click to change title 1</button>
+    <hr>
+  </div>
+  <script>
+    var one = new Vue({
+      el: '#app1',
+      data: {
+        message: 'Hello One!'
+      },
+      computed: {
+        greet: function () {
+          return 'Greet One';
+        }
+      }
+    });
+    var two = new Vue({
+      el: '#app2',
+      data: {
+        message: 'Hello Two!'
+      },
+      methods: {
+        changeTitle: function () {
+          one.message = "Hello One changed"
+        }
+      },
+      computed: {
+        greet: function () {
+          return 'Greet Two';
+        }
+      }
+    });
+    //one.message = "Changed from outside";
+  </script>
+
+</body>
+
+</html>

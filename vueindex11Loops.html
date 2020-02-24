@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<body>
+
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <ul>
+      <li v-for="hobby in hobbies">{{ hobby }}</li>
+
+    </ul>
+    <ul>
+      <li v-for="(address, index) in addresses">{{index}}. {{ address.street }} - {{ address.city }}</li>
+    </ul>
+    <template v-for="address in addresses">
+      <div v-for="(val, key) in addresses">
+        <p>{{ key }} - {{ val.street }} - {{ val.city }}</p>
+      </div>
+    </template>
+    <!-- I am lost...???-->
+  </div>
+  <script>
+    var myObject = new Vue({
+      el: '#app',
+      data: {
+        message: "Loops",
+        name: 'Jack',
+        hobbies: ['squash', 'tenis', 'soccer', 'basketball'],
+        addresses: [{
+          street: 'Kattestraat',
+          city: 'Gent'
+        }, {
+          street: 'Wetstraat',
+          city: 'Brussel'
+        }, {
+          street: 'Stationsstraat',
+          city: 'Kortrijk'
+        }, ]
+      }
+
+
+
+    });
+  </script>
+
+</body>
+
+</html>
